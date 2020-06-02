@@ -13,5 +13,12 @@ if __name__ == "__main__" :
     game = Game(phrase.Phrase(random_phrase))
     print(game.phrase)
     print(game.attempts)
+
+
     game.input()
-    print(game.result())
+
+
+    if game.result() :
+        print("bravo")
+    else :
+        print("dommage")

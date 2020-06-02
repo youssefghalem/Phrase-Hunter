@@ -25,10 +25,7 @@ class Game():
                 self.attempts -= 1
 
             print(self.phrase)
-            #probleme ici !!!!!!!!!!!!!!!!!!!!!!
-            print(self.phrase.correct_answer())
             print(self.attempts)
-            print(self.result())
 
     def result(self):
         return self.phrase.correct_answer() and self.attempts > 0
