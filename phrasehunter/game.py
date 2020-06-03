@@ -14,18 +14,23 @@ class Game():
 
             a = input("Please type a character : ").lower()
 
-            # we make sure not to count previous correct answers
-            while self.phrase.string_guessed(a) == True or a not in string.ascii_lowercase :
-                a = input("Please type a character : ")
+            if a not in string.ascii_lowercase :
+                print("please type one alphabetic character")
+                continue
+
+            elif  self.phrase.string_guessed(a) == True :
+                print("this character has been guessed, try a new one")
+                continue
 
             self.phrase.was_guessed(a)
 
             #if the player makes a mistake, attempts are decreased
             if not self.phrase.string_guessed(a) :
                 self.attempts -= 1
+                print(f"you still have {self.attempts} lives out of 5" )
 
             print(self.phrase)
-            print(self.attempts)
+
 
     def result(self):
         return self.phrase.correct_answer() and self.attempts > 0
